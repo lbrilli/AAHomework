@@ -1,15 +1,20 @@
 fishes = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish', 'ffiiiiisshh', 'fsh', 'fiiiissshhhhhh']
 #=> "fiiiissshhhhhh"
 
-longest = ''
 
-# fishes.each do |fish|
-#     if fish.length > longest.length
-#         longest = fish
-#     end
-# end
+def sluggish_octopus(fishes)
+    longest = ''
 
-# puts longest
+    fishes.each do |fish|
+        if fish.length > longest.length
+            longest = fish
+        end
+    end
+
+    longest
+end
+
+puts sluggish_octopus(fishes)
 
 
 def dominant_octopus(fishes)
