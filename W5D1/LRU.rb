@@ -1,17 +1,16 @@
  class LRUCache
     def initialize(size)
-        @cache = Array.new(size)
+        @cache = []
+        @size = size
     end
 
     def count
-        count = 0
-        @cache.each {|ele| count += ele}
-      # returns number of elements currently in cache
-      count
+        @cache.length
+    #   # returns number of elements currently in cache
     end
 
     def add(el)
-        if self.count == @cache.length
+        if self.count == @size
             @cache.shift
         end
         @cache.push(el)
