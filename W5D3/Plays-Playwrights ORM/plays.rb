@@ -26,15 +26,17 @@ class Play
       WHERE title = ?
     SQL
 
-    return play
+    Play.new(play.first)
   end
 
   def self.find_by_playwright(name)
-    PlayDBConnection.instance.execute(<<-SQL, playwright_id)
+    play = PlayDBConnection.instance.execute(<<-SQL, playwright_id)
       SELECT *
       FROM plays
       WHERE playwright_id = ?
     SQL
+
+    plays.map {|play| Play.new(play)}
   end
 
   def initialize(options)
